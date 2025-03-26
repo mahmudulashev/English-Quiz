@@ -18,6 +18,7 @@ body {
 
 main {
     background-color: rgb(255, 250, 238);
+
 }
 
 
@@ -126,10 +127,11 @@ button {
 
 }
 
-.hero-left > button {
-    width: 76%;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;   
+
+.hero-left > a > button {
+    /* width: 76%; */
+    padding: 0.8rem 4rem;
+    font-size: 1.3rem;   
 }
 
 .univer-wrapper {

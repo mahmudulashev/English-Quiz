@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Reytingi</title>
+</head>
+<body>
+    <h2>Eng yaxshi natijalar</h2>
+    <table border="1">
+        <tr>
+            <th>Foydalanuvchi</th>
+            <th>Natija</th>
+            <th>Sana</th>
+        </tr>
+        {% for leader in leaders %}
+        <tr>
+            <td>{{ leader["first_name"] }} {{ leader["last_name"] }}</td>
+            <td>{{ leader["ball"] }}</td>
+            <td>{{ leader["test_date"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Bosh sahifaga qaytish</a>
+</body>
+</html>

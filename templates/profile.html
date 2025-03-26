@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+</head>
+<body>
+    <h2>Salom, {{ first_name }} {{ last_name }}!</h2>
+    <h3>Sizning test natijalaringiz</h3>
+    <table border="1">
+        <tr>
+            <th>Natija</th>
+            <th>Sana</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result["score"] }}</td>
+            <td>{{ result["test_date"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Bosh sahifaga qaytish</a>
+</body>
+</html>
