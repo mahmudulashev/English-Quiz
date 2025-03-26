@@ -119,17 +119,16 @@ button {
     font-weight: 800;
     border: none;
     color: white;
-    background-color: rgba(205, 206, 207, 0.784);
     font-size: 18px;
     cursor: pointer;
-    color: gray;
     margin-bottom: 1rem;
     font-family: "Mulish", sans-serif;
+    background-color: #073255;
+    color: rgb(249, 211, 24);
 }
 
 button:hover {
-    background-color: #073255;
-    color: rgb(249, 211, 24);
+    opacity: 0.7;
 }
 
 h3 {

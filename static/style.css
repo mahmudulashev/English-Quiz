@@ -129,9 +129,19 @@ button {
 
 
 .hero-left > a > button {
-    /* width: 76%; */
+    
     padding: 0.8rem 4rem;
     font-size: 1.3rem;   
+
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
 .univer-wrapper {
@@ -239,6 +249,7 @@ button {
     line-height: 125%;
     color: rgba(33, 37, 41, 0.5);
     margin-top: 1rem;
+    padding: 0 1rem;
     
 }
 .content > h2 {
@@ -279,6 +290,12 @@ button {
 
 .card > button {
     margin-bottom: 2rem;
+    padding: 0.8rem 4rem;
+}
+
+.card > a > button {
+    margin-bottom: 2rem;
+    padding: 0.8rem 4rem;
 }
 
 .card-wrapper {

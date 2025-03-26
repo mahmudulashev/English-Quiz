@@ -14,6 +14,10 @@ def conn_databaza():
     conn.row_factory = sqlite3.Row
     return conn
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     error_message = ""
@@ -38,7 +42,7 @@ def register():
                            (first_name, last_name, username, hashed_password))
             conn.commit()
             conn.close()
-            return redirect(url_for("login"))
+            return redirect(url_for("testcover"))
 
         conn.close()
     
