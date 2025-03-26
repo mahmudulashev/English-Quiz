@@ -22,28 +22,34 @@
 
     <main>
         <div class="left">
-            <h2>Sign up for free, unlimited practice!</h2>
+
+            <h2>Sign up for free, <br> unlimited practice!</h2>
             <ul>
                 <li><img src="/static/images/kompyuter.svg" alt=""> Unlimited practice tests for free</li>
                 <li><img src="/static/images/yorliq.svg" alt=""> Instant score estimate</li>
-                <li><img src="/static/images/lampochka.svg" alt=""> ATips on preparing for the test</li>
+                <li><img src="/static/images/lampochka.svg" alt="">Tips on preparing for the test</li>
             </ul>
         </div>
 
         <div class="right">
-            <form action="/register" method="POST">
-                    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-                    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-                    <input type="text" id="username" name="username" placeholder="Username" required>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                
-                <button type="submit">NEXT</button>
-            </form>
+            <div class="right-wrapper">
+                <form action="/register" method="POST">
+                        <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
 
-            <p>By continuing, you agree to our Terms and Privacy Policy.</p>
+                <p> <a class="policy" href="">By continuing, you agree to our Terms and Privacy Policy.</a></p> 
+            </div>
+           
+            <a href="/login">Already have an account? Sign in </a>
         </div>
 
     </main>
+
 
 </body>
 </html>
