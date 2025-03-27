@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/test.css">
 </head>
 <body>
-    <h2>{{ index }}-question</h2>
-    <p>{{ question["question"] }}</p>
+    <main>
+        <!-- <p>{{ index }}-question</p> -->
+        <h2>{{ question["question"] }}</h2>
 
-    <form action="/test" method="POST">
-        <input type="radio" name="option" value="1" required> {{ question["option1"] }}<br>
-        <input type="radio" name="option" value="2"> {{ question["option2"] }}<br>
-        <input type="radio" name="option" value="3"> {{ question["option3"] }}<br>
-        <input type="radio" name="option" value="4"> {{ question["option4"] }}<br>
-        <button type="submit">Keyingi</button>
-    </form>
+        <form action="/test" method="POST">
+          <span class="test-form">  <input type="radio" name="option" value="1" required> <p>{{ question["option1"] }}</p> </span>
+          <span class="test-form"> <input type="radio" name="option" value="2"> <p>{{ question["option2"] }}</p> </span> 
+          <span class="test-form"> <input type="radio" name="option" value="3"> <p>{{ question["option3"] }}</p> </span>
+          <span class="test-form"> <input type="radio" name="option" value="4"> <p>{{ question["option4"] }}</p> </span> 
+          <span class="test-button">
+            <button class="cancel"><a href="/" >Cancel</a></button>
+            <button type="submit">Next</button>
+            
+          </span>
+            
+        </form>
+    </main>
 </body>
 </html>

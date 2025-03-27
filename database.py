@@ -36,7 +36,7 @@ questions = [
     ("Choose the correct preposition: She is interested ___ learning new languages.", "on", "in", "at", "with", 2),
     ("Choose the correct pronoun: This book is not mine, it’s ___.", "yours", "your", "you", "you're", 1),
     ("Choose the correct comparative form: This exam is ___ than the last one.", "difficult", "more difficult", "most difficult", "difficultest", 2),
-    ("Choose the correct sentence:", "If I will see him, I tell him the news.", "If I see him, I will tell him the news.", "If I saw him, I will tell him the news.", "If I see him, I told him the news.", 2),
+    ("Choose the correct preposition: The book is _____ the table.", "in", "on", "at", "by", 2),
     ("Choose the correct verb form: She usually ___ to work by bus.", "go", "goes", "going", "gone", 2)
 ]
 

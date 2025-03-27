@@ -1,0 +1,131 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    font-family: "Mulish", sans-serif;
+    background-color: rgb(240, 244, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    font-family: "Mulish", sans-serif;
+    color: #073255;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.27);
+    padding: 4rem;
+    border-radius: 1rem ;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+h2 {
+    color: #073255;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+    align-self: center;
+}
+
+.test-form {
+    display: flex;
+    gap: 0.5rem;
+    border: rgb(229, 172, 58) 1px solid;
+    padding: 0.7rem 1.4rem;
+    width: 20rem;
+    border-radius: 0.7rem;
+    align-items: center;
+}
+
+p {
+
+
+    color: rgb(72, 68, 68);
+
+}
+
+.test-button {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4rem;
+}
+
+button {
+    margin-top: 2rem;
+    padding:  0.6rem 1.7rem;
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    background-color: #073255;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-family: "Mulish", sans-serif;
+}
+
+.cancel {
+    background-color: white;
+    border: #ff1e1e 1px solid;  
+    color: #ff2b2b;
+    padding: 0.6rem 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.cancel:hover {
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+    background-color: rgb(189, 17, 17);
+    color: rgb(64, 9, 9);
+}
+
+button:hover {
+    background-color: #0a4b8c;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+input[type="radio"] {
+    appearance: none;  /* Brauzerning default radio button dizaynini o‘chirib tashlaymiz */
+    width: 17px;
+    height: 17px;
+    border: 2px solid rgb(229, 172, 58);
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type="radio"]:checked {
+    background-color: rgb(240, 213, 37);  /* Tanlanganda fon rangi */
+    border-color: rgb(225, 156, 19);
+}
+

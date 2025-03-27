@@ -1,0 +1,48 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+main {
+    margin-top: 30px;
+}
+
+hgroup h2 {
+    font-weight: 800;
+}
+
+hgroup h3 {
+    font-weight: 600;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background: #f4f4f4;
+    font-weight: 600;
+}
+
+a[role="button"] {
+    margin-top: 20px;
+    display: inline-block;
+}

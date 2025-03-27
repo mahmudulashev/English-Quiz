@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natija</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/result.css">
 </head>
 <body>
-    <h2>Test natijalari</h2>
-    <p>Siz to'g'ri javob berdingiz: <strong>{{ ball }}</strong> ta savolga.</p>
-    <a href="/">Bosh sahifaga qaytish</a>
-    <a href="/profile">profile</a>
-    <a href="/leaderboard">Board</a>
+    <main>
+        <h2>Test natijalari</h2>
+
+        <div><img src="/static/images/Mainn.svg" alt=""></div>
+
+        <div class="content">
+            <p> To'g'ri javoblar soni: <span>{{ ball }} ta </span></p>
+            <p>Darajangiz: <span>{{ level }}</span></p>
+        </div>
+
+        <div class="test-button">
+            <a href="/"><button class="cancel">Back</button></a>
+            <a href="/leaderboard"><button>Leader Board</button></a>
+        </div>
+    </main>
 </body>
 </html>

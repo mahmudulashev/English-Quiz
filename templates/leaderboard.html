@@ -2,25 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test Reytingi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/leaderboard.css">
 </head>
 <body>
-    <h2>Eng yaxshi natijalar</h2>
-    <table border="1">
-        <tr>
-            <th>Foydalanuvchi</th>
-            <th>Natija</th>
-            <th>Sana</th>
-        </tr>
-        {% for leader in leaders %}
-        <tr>
-            <td>{{ leader["first_name"] }} {{ leader["last_name"] }}</td>
-            <td>{{ leader["ball"] }}</td>
-            <td>{{ leader["test_date"] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    <a href="/">Bosh sahifaga qaytish</a>
+
+    <nav class="container">
+        <ul>
+            <li><a href="/">Main</a></li>
+        </ul>
+        <ul>
+            <li><a href="/profile">Account</a></li>
+            <li><a href="/test-cover">Take a Test</a></li>
+            
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section>
+            <hgroup>
+                <h2>Best results</h2>
+                <h3>Top users</h3>
+            </hgroup>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Result</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for leader in leaders %}
+                    <tr>
+                        <td>{{ leader["first_name"] }} {{ leader["last_name"] }}</td>
+                        <td>{{ leader["ball"] }}</td>
+                        <td>{{ leader["test_date"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="/" role="button">← Back</a>
+        </section>
+    </main>
+
+    <footer class="container">
+        <small><a href="#">Privacy Policy</a> • <a href="#">Support</a></small>
+    </footer>
+
 </body>
 </html>
