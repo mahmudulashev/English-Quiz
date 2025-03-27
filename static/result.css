@@ -1,3 +1,4 @@
+/* General styles */
 *, html {
     margin: 0;
     padding: 0;
@@ -13,7 +14,6 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    
 }
 
 main {
@@ -22,11 +22,11 @@ main {
     color: #073255;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.27);
     padding: 4rem;
-    border-radius: 1rem ;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    width: 60%; /* Default width for larger screens */
 }
 
 main > img {
@@ -62,24 +62,20 @@ form {
     align-self: center;
 }
 
-
 p {
-
-
     color: rgb(72, 68, 68);
-
 }
 
 .test-button {
-    display: flex;
-    justify-content: space-between;
-
-    gap: 3rem;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Position buttons at opposite ends */
+    align-items: center; /* Vertically align buttons */
+    width: 100%; /* Ensure it takes the full width of the container */
+    margin-top: 1rem;
 }
 
 button {
-    margin-top: 2rem;
-    padding:  0.6rem 1.7rem;
+    padding: 0.6rem 1.7rem;
     border-radius: 5px;
     font-weight: 700;
     border: none;
@@ -87,7 +83,6 @@ button {
     background-color: #073255;
     font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 1rem;
     font-family: "Mulish", sans-serif;
 }
 
@@ -107,6 +102,72 @@ button:hover {
     background-color: #ff0e0e;
     color: white;
     transition: 0.3s ease-in-out;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    main {
+        width: 90%; /* Adjust width for tablets and smaller screens */
+        padding: 2rem;
+    }
+
+    main > div > img {
+        width: 90%;
+    }
+
+    main > div {
+        display: flex;
+        
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 1.3rem; /* Adjust heading size */
+        margin-bottom: 2rem;
+    }
+
+    .content {
+        gap: 0.8rem; /* Reduce gap between content items */
+    }
+
+    .test-button {
+        flex-direction: row; /* Keep buttons in a row */
+        justify-content: space-between; /* Maintain spacing between buttons */
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 0.5rem 1.2rem; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: 95%; /* Adjust width for smaller phones */
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem; /* Further reduce heading size */
+    }
+
+    .content {
+        gap: 0.5rem; /* Reduce gap between content items */
+    }
+
+    .test-button {
+        flex-direction: row; /* Keep buttons in a row */
+        justify-content: space-between; /* Maintain spacing between buttons */
+        gap: 0.5rem;
+    }
+
+    button {
+        width: 100%; /* Make buttons full width */
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 0.5rem 1rem; /* Adjust button padding */
+    }
 }
 
 

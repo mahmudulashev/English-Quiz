@@ -1,3 +1,4 @@
+/* General styles */
 *, html {
     margin: 0;
     padding: 0;
@@ -13,7 +14,6 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    
 }
 
 main {
@@ -22,11 +22,10 @@ main {
     color: #073255;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.27);
     padding: 4rem;
-    border-radius: 1rem ;
+    border-radius: 1rem;
     width: 60%;
     display: flex;
     flex-direction: column;
-
 }
 
 h2 {
@@ -46,32 +45,27 @@ form {
     align-self: center;
 }
 
+/* Ensure input and p are aligned in a row */
 .test-form {
-    display: flex;
-    gap: 0.5rem;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    gap: 0.5rem; /* Add spacing between input and text */
     border: rgb(229, 172, 58) 1px solid;
     padding: 0.7rem 1.4rem;
     width: 20rem;
     border-radius: 0.7rem;
-    align-items: center;
-}
-
-p {
-
-
-    color: rgb(72, 68, 68);
-
 }
 
 .test-button {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 4rem;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Position buttons at opposite ends */
+    align-items: center; /* Vertically align buttons */
+    width: 100%; /* Ensure it takes the full width of the container */
+    margin-top: 1rem;
 }
 
 button {
-    margin-top: 2rem;
-    padding:  0.6rem 1.7rem;
+    padding: 0.6rem 1.7rem;
     border-radius: 5px;
     font-weight: 700;
     border: none;
@@ -79,25 +73,18 @@ button {
     background-color: #073255;
     font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 1rem;
     font-family: "Mulish", sans-serif;
 }
 
-.cancel {
+button.cancel {
     background-color: white;
-    border: #ff1e1e 1px solid;  
+    border: #ff1e1e 1px solid;
     color: #ff2b2b;
     padding: 0.6rem 1rem;
+    text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: red;
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.cancel:hover {
+button.cancel:hover {
     opacity: 0.8;
     transition: 0.3s ease-in-out;
     background-color: rgb(189, 17, 17);
@@ -110,10 +97,13 @@ button:hover {
     transition: 0.3s ease-in-out;
 }
 
-
+.test-button a {
+    text-decoration: none;
+    color: inherit;
+}
 
 input[type="radio"] {
-    appearance: none;  /* Brauzerning default radio button dizaynini o‘chirib tashlaymiz */
+    appearance: none;
     width: 17px;
     height: 17px;
     border: 2px solid rgb(229, 172, 58);
@@ -125,7 +115,87 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-    background-color: rgb(240, 213, 37);  /* Tanlanganda fon rangi */
+    background-color: rgb(240, 213, 37);
     border-color: rgb(225, 156, 19);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    main {
+        width: 80%;
+        padding: 3rem;
+    }
+
+    form {
+        width: 70%;
+    }
+
+    .test-form {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .test-form {
+        width: 100%; /* Ensure it takes full width on smaller screens */
+        flex-direction: row; /* Keep input and text in a row */
+        align-items: center; /* Maintain vertical alignment */
+    }
+    
+    p {
+        font-size: 0.8rem;
+    }
+
+    .test-button {
+        flex-direction: row; /* Keep buttons in a row */
+        justify-content: space-between; /* Maintain spacing between buttons */
+        gap: 1rem;
+    }
+
+    button {
+        width: auto; /* Ensure buttons don't stretch unnecessarily */
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .test-form {
+        padding: 0.5rem 1rem;
+    }
+
+    .test-button {
+        flex-direction: row; /* Keep buttons in a row */
+        justify-content: space-between; /* Maintain spacing between buttons */
+        gap: 0.5rem;
+    }
+
+    button {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    }
 }
 
