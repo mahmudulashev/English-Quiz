@@ -42,7 +42,27 @@ table th {
     font-weight: 600;
 }
 
-a[role="button"] {
-    margin-top: 20px;
-    display: inline-block;
+
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
 }
