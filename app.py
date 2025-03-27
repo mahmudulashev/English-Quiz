@@ -70,7 +70,7 @@ def login():
             session["username"] = user["username"]
             session["first_name"] = user["first_name"]
             session["last_name"] = user["last_name"]
-            session["is_admin"] = user["is_admin"]
+            session["is_admin"] = user["is_admin"]  # is_admin sessiyaga to'g'ri saqlanmoqda
 
             if user["is_admin"]:
                 return redirect(url_for("admin_panel"))
@@ -193,7 +193,7 @@ def logout():
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin_panel():
-    if not is_admin():
+    if not is_admin():  # is_admin funksiyasi sessiyani tekshirmoqda
         return "You do not have admin rights!"
 
     conn = conn_databaza()

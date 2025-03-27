@@ -2,49 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/admin.css">
 </head>
 <body>
-    <h2>Admin Panel</h2>
+    <nav class="container">
+        <ul>
+            <li><a href="/">Main</a></li>
+        </ul>
+        <ul>
+            <li><a href="/leaderboard">Leader Board</a></li>
+            <li><a href="/test-cover">Take a Test</a></li>
+            
+        </ul>
+    </nav>
 
-    <h3>Yangi savol qo‘shish</h3>
-    <form method="POST">
-        <label>Savol:</label><br>
-        <input type="text" name="question" required><br>
-        <label>Variant 1:</label><br>
-        <input type="text" name="option1" required><br>
-        <label>Variant 2:</label><br>
-        <input type="text" name="option2" required><br>
-        <label>Variant 3:</label><br>
-        <input type="text" name="option3" required><br>
-        <label>Variant 4:</label><br>
-        <input type="text" name="option4" required><br>
-        <label>To‘g‘ri javob (1-4):</label><br>
-        <input type="number" name="correct_option" min="1" max="4" required><br>
-        <button type="submit">Qo‘shish</button>
-    </form>
+    <main class="container">
+        <section>
+            <hgroup>
+                <h2>Add new question:</h2>
+            </hgroup>
 
-    <h3>Mavjud savollar</h3>
-    <table border="1">
-        <tr>
-            <th>Savol</th>
-            <th>Variantlar</th>
-            <th>O‘chirish</th>
-        </tr>
-        {% for question in questions %}
-        <tr>
-            <td>{{ question["question_text"] }}</td>
-            <td>{{ question["option1"] }}, {{ question["option2"] }}, {{ question["option3"] }}, {{ question["option4"] }}</td>
-            <td>
-                <form action="{{ url_for('delete_question', question_id=question['id']) }}" method="POST">
-                    <button type="submit">O‘chirish</button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+            <form method="POST">
+                <label for="question">Question:</label>
+                <input type="text" id="question" name="question" required>
 
-    <a href="{{ url_for('profile') }}">Profilga qaytish</a>
+                <label for="option1">Option 1:</label>
+                <input type="text" id="option1" name="option1" required>
+
+                <label for="option2">Option 2:</label>
+                <input type="text" id="option2" name="option2" required>
+
+                <label for="option3">Option 3:</label>
+                <input type="text" id="option3" name="option3" required>
+
+                <label for="option4">Option 4:</label>
+                <input type="text" id="option4" name="option4" required>
+
+                <label for="correct_option">Correct Option (1-4):</label>
+                <input type="number" id="correct_option" name="correct_option" min="1" max="4" required>
+
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <section>
+            <h3>Available questions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Options</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for question in questions %}
+                    <tr>
+                        <td>{{ question["option1"] }}, {{ question["option2"] }}, {{ question["option3"] }}, {{ question["option4"] }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_question', question_id=question['id']) }}" method="POST">
+                                <button class="del" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="/" role="button">← Back</a>
+        </section>
+    </main>
+
 </body>
 </html>

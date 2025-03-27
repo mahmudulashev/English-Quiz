@@ -42,6 +42,10 @@ table th {
     font-weight: 600;
 }
 
+.logout {
+    color: red;
+}
+
 
 
 @media (max-width: 768px) {
