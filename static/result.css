@@ -1,4 +1,3 @@
-/* General styles */
 *, html {
     margin: 0;
     padding: 0;
@@ -26,7 +25,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%; /* Default width for larger screens */
+    width: 60%; 
 }
 
 main > img {
@@ -67,10 +66,10 @@ p {
 }
 
 .test-button {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Position buttons at opposite ends */
-    align-items: center; /* Vertically align buttons */
-    width: 100%; /* Ensure it takes the full width of the container */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
     margin-top: 1rem;
 }
 
@@ -104,10 +103,10 @@ button:hover {
     transition: 0.3s ease-in-out;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
     main {
-        width: 90%; /* Adjust width for tablets and smaller screens */
+        width: 90%; 
         padding: 2rem;
     }
 
@@ -122,51 +121,51 @@ button:hover {
     }
 
     h2 {
-        font-size: 1.3rem; /* Adjust heading size */
+        font-size: 1.3rem; 
         margin-bottom: 2rem;
     }
 
     .content {
-        gap: 0.8rem; /* Reduce gap between content items */
+        gap: 0.8rem; 
     }
 
     .test-button {
-        flex-direction: row; /* Keep buttons in a row */
-        justify-content: space-between; /* Maintain spacing between buttons */
+        flex-direction: row; 
+        justify-content: space-between; 
         gap: 1rem;
         margin-top: 3rem;
     }
 
     button {
-        font-size: 0.9rem; /* Adjust button font size */
-        padding: 0.5rem 1.2rem; /* Adjust button padding */
+        font-size: 0.9rem; 
+        padding: 0.5rem 1.2rem; 
     }
 }
 
 @media (max-width: 480px) {
     main {
-        width: 95%; /* Adjust width for smaller phones */
+        width: 95%; 
         padding: 1.5rem;
     }
 
     h2 {
-        font-size: 1.1rem; /* Further reduce heading size */
+        font-size: 1.1rem; 
     }
 
     .content {
-        gap: 0.5rem; /* Reduce gap between content items */
+        gap: 0.5rem; 
     }
 
     .test-button {
-        flex-direction: row; /* Keep buttons in a row */
-        justify-content: space-between; /* Maintain spacing between buttons */
+        flex-direction: row; 
+        justify-content: space-between;
         gap: 0.5rem;
     }
 
     button {
-        width: 100%; /* Make buttons full width */
-        font-size: 0.9rem; /* Adjust button font size */
-        padding: 0.5rem 1rem; /* Adjust button padding */
+        width: 100%;
+        font-size: 0.9rem; 
+        padding: 0.5rem 1rem; 
     }
 }
 

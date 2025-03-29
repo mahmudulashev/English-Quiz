@@ -1,4 +1,4 @@
-/* General styles */
+
 *, html {
     margin: 0;
     padding: 0;
@@ -45,11 +45,11 @@ form {
     align-self: center;
 }
 
-/* Ensure input and p are aligned in a row */
+
 .test-form {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically align items */
-    gap: 0.5rem; /* Add spacing between input and text */
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
     border: rgb(229, 172, 58) 1px solid;
     padding: 0.7rem 1.4rem;
     width: 20rem;
@@ -57,10 +57,9 @@ form {
 }
 
 .test-button {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Position buttons at opposite ends */
-    align-items: center; /* Vertically align buttons */
-    width: 100%; /* Ensure it takes the full width of the container */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     margin-top: 1rem;
 }
 
@@ -150,9 +149,9 @@ input[type="radio"]:checked {
     }
 
     .test-form {
-        width: 100%; /* Ensure it takes full width on smaller screens */
-        flex-direction: row; /* Keep input and text in a row */
-        align-items: center; /* Maintain vertical alignment */
+        width: 100%; 
+        flex-direction: row;
+        align-items: center;
     }
     
     p {
@@ -160,13 +159,13 @@ input[type="radio"]:checked {
     }
 
     .test-button {
-        flex-direction: row; /* Keep buttons in a row */
-        justify-content: space-between; /* Maintain spacing between buttons */
+        flex-direction: row; 
+        justify-content: space-between; 
         gap: 1rem;
     }
 
     button {
-        width: auto; /* Ensure buttons don't stretch unnecessarily */
+        width: auto; 
     }
 
     h2 {
@@ -188,14 +187,14 @@ input[type="radio"]:checked {
     }
 
     .test-button {
-        flex-direction: row; /* Keep buttons in a row */
-        justify-content: space-between; /* Maintain spacing between buttons */
+        flex-direction: row;
+        justify-content: space-between; 
         gap: 0.5rem;
     }
 
     button {
-        font-size: 0.9rem; /* Adjust font size for smaller screens */
-        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+        font-size: 0.9rem; 
+        padding: 0.5rem 1rem; 
     }
 }
 

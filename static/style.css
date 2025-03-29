@@ -609,6 +609,14 @@ footer {
         align-items: center;
     }
 
+
+
+    .social {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
     .footer-left > .logo > img {
         width: 16%;
     }

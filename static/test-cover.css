@@ -5,7 +5,6 @@
 }
 
 body {
-    /* color: #073255; */
     
     font-family: "Mulish", sans-serif;
     background-color: rgb(255, 255, 255);
@@ -17,6 +16,7 @@ body {
 }
 
 main {
+    margin-top: 3rem;
     background-color: rgb(255, 255, 255);
     font-family: "Mulish", sans-serif;
     color: #073255;

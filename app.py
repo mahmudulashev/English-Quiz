@@ -14,6 +14,13 @@ def conn_databaza():
     conn.row_factory = sqlite3.Row
     return conn
 
+
+
+
+
+
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -81,11 +88,7 @@ def login():
 
     return render_template("login.html")
 
-@app.route("/")
-def home():
-    if "user_id" in session:
-        return render_template("index.html", username=session["username"])
-    return redirect(url_for("login"))
+
 
 @app.route("/test-cover") 
 def testcover():
