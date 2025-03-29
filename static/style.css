@@ -34,10 +34,10 @@ header {
     left: 0;
     width: 100%; 
     z-index: 1000; 
-    background-color: white; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: rgb(255, 250, 238); 
     padding: 1.5rem; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+
 }
 
 .header-wrapper {
@@ -209,7 +209,7 @@ button:hover {
 /* HERO */
 
 .hero {
-    padding-top: 6rem;
+    padding-top: 7rem;
 }
 
 .hero-wrapper {
@@ -521,6 +521,11 @@ footer {
         margin-right: 0.6rem;
     }
 
+    header {
+        padding: 2rem 1rem; 
+        position: static;
+    }
+
 
     nav {
         display: none;
@@ -538,6 +543,10 @@ footer {
         justify-content: space-between;
         align-items: center;
         padding: 0  2rem;
+    }
+
+    .hero {
+        padding-top: 2rem;
     }
 
     

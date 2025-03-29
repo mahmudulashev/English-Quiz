@@ -56,6 +56,21 @@ form {
     border-radius: 0.7rem;
 }
 
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(229, 172, 58);
+    transition: width 0.1s linear;
+}
+
 .test-button {
     display: flex; 
     justify-content: space-between; 

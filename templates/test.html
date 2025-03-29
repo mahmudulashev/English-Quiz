@@ -14,23 +14,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/test.css">
 </head>
-<body>
-    <main>
-        
-        <h2>{{ question["question"] }}</h2>
 
-        <form action="/test" method="POST">
-          <span class="test-form">  <input type="radio" name="option" value="1" required> <p>{{ question["option1"] }}</p> </span>
-          <span class="test-form"> <input type="radio" name="option" value="2"> <p>{{ question["option2"] }}</p> </span> 
-          <span class="test-form"> <input type="radio" name="option" value="3"> <p>{{ question["option3"] }}</p> </span>
-          <span class="test-form"> <input type="radio" name="option" value="4"> <p>{{ question["option4"] }}</p> </span> 
-          <span class="test-button">
-            <button class="cancel"><a href="/" >Cancel</a></button>
-            <button type="submit">Next</button>
-            
+<body>
+  <main>
+      <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <h2>{{ question["question"] }}</h2>
+
+      <form id="test-form" action="/test" method="POST">
+          <span class="test-form">  
+              <input type="radio" name="option" value="1" required> <p>{{ question["option1"] }}</p>
           </span>
-            
-        </form>
-    </main>
+          <span class="test-form">
+              <input type="radio" name="option" value="2"> <p>{{ question["option2"] }}</p>
+          </span>
+          <span class="test-form">
+              <input type="radio" name="option" value="3"> <p>{{ question["option3"] }}</p>
+          </span>
+          <span class="test-form">
+              <input type="radio" name="option" value="4"> <p>{{ question["option4"] }}</p>
+          </span>
+          <span class="test-button">
+              <button type="button" class="cancel" onclick="window.location.href='/'">Cancel</button>
+              <button type="submit">Next</button>
+          </span>
+      </form>
+  </main>
+
+  <script>
+      let timeLeft = 30;
+      const form = document.getElementById("test-form");
+      const progressBar = document.getElementById("progress-bar");
+
+      const countdown = setInterval(() => {
+          timeLeft--;
+          progressBar.style.width = `${((30 - timeLeft) / 30) * 100}%`;
+
+          if (timeLeft === 0) {
+              clearInterval(countdown);
+              form.submit();
+          }
+      }, 1000);
+  </script>
 </body>
+
+
+
 </html>
