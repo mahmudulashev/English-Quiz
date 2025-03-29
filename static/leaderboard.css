@@ -11,6 +11,7 @@
 
 body {
     font-family: 'Mulish', sans-serif;
+    background-color: white;
 }
 
 main {
@@ -19,6 +20,7 @@ main {
 
 hgroup h2 {
     font-weight: 800;
+    color: #0a4b8c;
 }
 
 hgroup h3 {
@@ -35,12 +37,13 @@ table th, table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: left;
+    color: black;
 }
 
 table th {
-    background: #f4f4f4;
+    background-color: #0a4b8c;
     font-weight: 600;
-    color: black;
+    color: white;
 }
 
 

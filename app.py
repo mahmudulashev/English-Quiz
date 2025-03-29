@@ -74,7 +74,7 @@ def login():
 
             if user["is_admin"]:
                 return redirect(url_for("admin_panel"))
-            return redirect(url_for("testcover"))
+            return redirect(url_for("profile"))
         else:
             return error_message
             
