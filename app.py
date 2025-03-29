@@ -19,7 +19,7 @@ def conn_databaza():
 
 
 
-
+# HOME
 
 @app.route("/")
 def index():
@@ -54,6 +54,11 @@ def register():
         conn.close()
     
     return render_template("register.html", error_message=error_message)
+
+
+
+
+# LOGIN
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -90,11 +95,14 @@ def login():
 
 
 
+# TEST
+
 @app.route("/test-cover") 
 def testcover():
     if "user_id" not in session:
         return redirect(url_for("login"))
     return render_template("test-cover.html")
+
 
 @app.route("/test", methods=["GET", "POST"])
 def test():
@@ -124,6 +132,10 @@ def test():
         return redirect(url_for("test"))
 
     return render_template("test.html", question=question, index=session["question_index"] + 1)
+
+
+
+# RESULT
 
 @app.route("/result")
 def result():
@@ -156,6 +168,11 @@ def result():
 
     return render_template("result.html", ball=ball, level=level)
 
+
+
+
+# PROFILE
+
 @app.route("/profile")
 def profile():
     if "user_id" not in session:
@@ -169,6 +186,11 @@ def profile():
     conn.close()
 
     return render_template("profile.html", results=results, first_name=session["first_name"], last_name=session["last_name"])
+
+
+
+
+# LEADERBOARD
 
 @app.route("/leaderboard")
 def leaderboard():
@@ -185,6 +207,11 @@ def leaderboard():
 
     return render_template("leaderboard.html", leaders=leaders)
 
+
+
+
+# LOGOUT
+
 @app.route("/logout")
 def logout():
     session.pop("user_id", None)
@@ -193,6 +220,10 @@ def logout():
     session.pop("last_name", None)
     session.pop("is_admin", None)
     return redirect(url_for("login"))
+
+
+
+# ADMIN PANEL
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin_panel():
