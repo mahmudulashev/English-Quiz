@@ -58,8 +58,9 @@ form {
 
 .test-button {
     display: flex; 
-    justify-content: center; 
+    justify-content: space-between; 
     align-items: center; 
+    margin-right: 5rem;
     margin-top: 1rem;
 }
 
@@ -81,6 +82,7 @@ button.cancel {
     color: #ff2b2b;
     padding: 0.6rem 1rem;
     text-align: center;
+    
 }
 
 button.cancel:hover {
@@ -190,6 +192,7 @@ input[type="radio"]:checked {
         flex-direction: row;
         justify-content: space-between; 
         gap: 0.5rem;
+        margin-right: 0;
     }
 
     button {

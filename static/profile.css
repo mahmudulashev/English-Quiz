@@ -131,7 +131,11 @@ hgroup h2 {
 
 hgroup h3 {
     font-weight: 600;
-    color: #555;
+    color:black;
+}
+
+h3 {
+    color: black;
 }
 
 table {
@@ -161,6 +165,12 @@ table th {
     cursor: pointer;
     font-size: 16px;
     margin-left: 0.4rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
 }
 
 .logout:hover {
