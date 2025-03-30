@@ -67,7 +67,7 @@
 .ham-menu span {
     height: 4px; 
     width: 100%;
-    background-color: #073255;
+    background-color: #ffffff;
     border-radius: 25px;
     position: absolute;
     left: 50%;
@@ -124,6 +124,26 @@ main {
     margin-top: 30px;
 }
 
+section {
+    margin-top: 3rem;
+}
+
+.header-wrapper {
+    background: #073255;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 hgroup h2 {
     font-weight: 800;
     color: #073255;
@@ -156,14 +176,13 @@ table th {
     color: white;
 }
 
-.logout {
+.logout-btn {
     background: #f44336;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     margin-left: 0.4rem;
 }
 
@@ -173,13 +192,13 @@ p {
     margin-bottom: 1rem;
 }
 
-.logout:hover {
+.logout-btn:hover {
     background: #d32f2f;
 }
 
 .profile {
-    background-color: #073255;
-    color: white;
+    color: #073255;
+    background-color: white;
 }
 
 .profile:hover {
@@ -209,7 +228,12 @@ p {
         align-items: center;
         display: flex;
         padding: 2rem;
+        position: static;
         
+    }
+
+    section {
+        margin-top: 0;
     }
 
     main {
