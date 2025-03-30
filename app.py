@@ -25,9 +25,13 @@ def conn_databaza():
 def index():
     return render_template("index.html")
 
+
+
+# REGISTER
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    error_message = ""
+    error = ""
     
     if request.method == "POST":
         first_name = request.form["first_name"]
@@ -42,7 +46,7 @@ def register():
         existing_user = cursor.fetchone()
 
         if existing_user:
-            error_message = "This username already taken"
+            error = "This username already taken"
         else:
             hashed_password = generate_password_hash(password)
             cursor.execute("INSERT INTO users (first_name, last_name, username, password) VALUES (?, ?, ?, ?)",
@@ -53,7 +57,7 @@ def register():
 
         conn.close()
     
-    return render_template("register.html", error_message=error_message)
+    return render_template("register.html", error=error)
 
 
 
@@ -62,36 +66,35 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    error_message = "Username or password incorrect"
+    error = ""  
     
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
 
         if not username or not password:
-            return "Username or password not entered."
-
-        conn = conn_databaza()
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
-        user = cursor.fetchone()
-        conn.close()
-
-        if user and check_password_hash(user["password"], password):
-            session["user_id"] = user["id"]
-            session["username"] = user["username"]
-            session["first_name"] = user["first_name"]
-            session["last_name"] = user["last_name"]
-            session["is_admin"] = user["is_admin"]  
-
-            if user["is_admin"]:
-                return redirect(url_for("admin_panel"))
-            return redirect(url_for("profile"))
+            error = "Username or password cannot be empty."
         else:
-            return error_message
-            
+            conn = conn_databaza()
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+            user = cursor.fetchone()
+            conn.close()
 
-    return render_template("login.html")
+            if user and check_password_hash(user["password"], password):
+                session["user_id"] = user["id"]
+                session["username"] = user["username"]
+                session["first_name"] = user["first_name"]
+                session["last_name"] = user["last_name"]
+                session["is_admin"] = user["is_admin"]
+
+                if user["is_admin"]:
+                    return redirect(url_for("admin_panel"))
+                return redirect(url_for("testcover"))
+            else:
+                error = "Invalid username or password."  
+
+    return render_template("login.html", error=error)  
 
 
 
@@ -234,17 +237,25 @@ def admin_panel():
     cursor = conn.cursor()
 
     if request.method == "POST":
-        question = request.form["question"]
-        option1 = request.form["option1"]
-        option2 = request.form["option2"]
-        option3 = request.form["option3"]
-        option4 = request.form["option4"]
-        togri = request.form["togri"]
+        try:
+            question = request.form["question"]
+            option1 = request.form["option1"]
+            option2 = request.form["option2"]
+            option3 = request.form["option3"]
+            option4 = request.form["option4"]
+            togri = int(request.form["togri"])  
 
-        cursor.execute("INSERT INTO questions (question, option1, option2, option3, option4, togri) VALUES (?, ?, ?, ?, ?, ?)", 
-                       (question, option1, option2, option3, option4, togri))
-        conn.commit()
+           
+            cursor.execute(
+                "INSERT INTO questions (question, option1, option2, option3, option4, togri) VALUES (?, ?, ?, ?, ?, ?)", 
+                (question, option1, option2, option3, option4, togri)
+            )
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+            return f"Error adding question: {e}"
 
+    
     cursor.execute("SELECT * FROM questions")
     questions = cursor.fetchall()
     conn.close()

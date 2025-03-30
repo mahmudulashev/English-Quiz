@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS users (
 )
 """)
 
-
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS questions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

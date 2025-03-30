@@ -63,6 +63,12 @@
                 <form action="/login" method="POST">
                     <input type="text" id="username" name="username" placeholder="Username" required>
                     <input type="password" id="password" name="password" placeholder="Password" required>
+                    
+                    
+                    {% if error %}
+                        <p class="error">{{ error }}</p>
+                    {% endif %}
+                    
                     <button type="submit">Sign In</button>
                 </form>
 
@@ -70,9 +76,6 @@
             </div>
            
             <a href="/register"> Need an account? Sign up </a>
-
-            <p>{{ error_message }}</p>
-            
         </div>
 
     </main>
