@@ -37,9 +37,7 @@
               <input type="radio" name="option" value="4"> <p>{{ question["option4"] }}</p>
           </span>
           <span class="test-button">
-              <form id="cancel-form" action="/cancel_test" method="POST" style="display: inline;">
-                  <button type="button" class="cancel" onclick="confirmCancel()">Cancel</button>
-              </form>
+              <button type="button" class="cancel">Cancel</button>
               <button type="submit">Next</button>
           </span>
       </form>
@@ -49,7 +47,6 @@
       let timeLeft = 30;
       const form = document.getElementById("test-form");
       const progressBar = document.getElementById("progress-bar");
-      const cancelForm = document.getElementById("cancel-form");
 
       const countdown = setInterval(() => {
           timeLeft--;
@@ -60,14 +57,9 @@
               form.submit();
           }
       }, 1000);
-
-      function confirmCancel() {
-          if (confirm("Are you sure you want to cancel the test?")) {
-              clearInterval(countdown); // Timer to'xtatiladi
-              cancelForm.submit();      // Cancel form yuboriladi
-          }
-      }
   </script>
 </body>
+
+
 
 </html>
