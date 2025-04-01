@@ -37,7 +37,7 @@
               <input type="radio" name="option" value="4"> <p>{{ question["option4"] }}</p>
           </span>
           <span class="test-button">
-              <button type="button" class="cancel">Cancel</button>
+              <button type="button" id="cancel-button" class="cancel">Cancel</button>
               <button type="submit">Next</button>
           </span>
       </form>
@@ -57,9 +57,15 @@
               form.submit();
           }
       }, 1000);
+
+      document.getElementById("cancel-button").addEventListener("click", function() {
+        window.location.href = "/cancel-test";
+    });
+    
   </script>
 </body>
 
 
 
 </html>
+

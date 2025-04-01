@@ -226,6 +226,15 @@ def logout():
 
 
 
+
+@app.route("/cancel-test")
+def cancel_test():
+    session.pop("question_index", None)
+    session.pop("ball", None)
+    return redirect(url_for("index"))
+
+
+
 # ADMIN PANEL
 
 @app.route("/admin", methods=["GET", "POST"])
