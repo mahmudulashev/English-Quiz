@@ -237,25 +237,19 @@ def admin_panel():
     cursor = conn.cursor()
 
     if request.method == "POST":
-        try:
-            question = request.form["question"]
-            option1 = request.form["option1"]
-            option2 = request.form["option2"]
-            option3 = request.form["option3"]
-            option4 = request.form["option4"]
-            togri = int(request.form["togri"])  
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        togri = int(request.form["togri"])
 
-           
-            cursor.execute(
-                "INSERT INTO questions (question, option1, option2, option3, option4, togri) VALUES (?, ?, ?, ?, ?, ?)", 
-                (question, option1, option2, option3, option4, togri)
-            )
-            conn.commit()
-        except Exception as e:
-            conn.rollback()
-            return f"Error adding question: {e}"
+        cursor.execute(
+            "INSERT INTO questions (question, option1, option2, option3, option4, togri) VALUES (?, ?, ?, ?, ?, ?)", 
+            (question, option1, option2, option3, option4, togri)
+        )
+        conn.commit()
 
-    
     cursor.execute("SELECT * FROM questions")
     questions = cursor.fetchall()
     conn.close()
