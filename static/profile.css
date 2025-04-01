@@ -205,6 +205,11 @@ p {
     background-color: #555;
 }
 
+footer a {
+    color: #073255;
+    text-decoration: none;
+}
+
 
 @media (max-width: 768px) {
 
